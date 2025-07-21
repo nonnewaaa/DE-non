@@ -4,8 +4,9 @@ import os
 
 load_dotenv(dotenv_path='postgress.env')
 
+#config
 user = os.getenv('DB_USERNAME')
-password = quote(os.getenv('DB_PASSWORD'))  # Encode special characters
+password = quote(os.getenv('DB_PASSWORD'))
 host = os.getenv('DB_HOST')
 port = os.getenv('DB_PORT')
 database = os.getenv('DB_NAME')
