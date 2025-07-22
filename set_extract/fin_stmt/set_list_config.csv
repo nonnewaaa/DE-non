@@ -1,0 +1,2 @@
+stock,columns,db_name,schema,table_name
+MTC|OR|OSP|PTT|PTTEP|PTTGC|RATCH|SAWAD|SCB|SCC|SCGP|TIDLOR|TISCO|TOP|TRUE|TTB|TU,period_as_of|assets|liabilities|equity|paid_up_capital|revenue|profit_loss_other_activities|net_profit|eps_baht|roa_percent|roe_percent|net_profit_margin_percent|statistics_as_of|last_price_baht|market_cap_m_baht|fs_period_as_of|pe_ratio|pbv_ratio|book_value_per_share_baht|dividend_yield_percent,Primary,analytics,raw_set_fin_data
