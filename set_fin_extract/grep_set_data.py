@@ -4,6 +4,14 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 
+set50_symbols = [
+    "ADVANC", "AOT", "AWC", "BANPU", "BBL", "BDMS", "BEM", "BGRIM", "BH", "BTS",
+    "CBG", "CENTEL", "COM7", "CPALL", "CPF", "CPN", "CRC", "DELTA", "EA", "EGCO",
+    "GLOBAL", "GPSC", "GULF", "HMPRO", "IVL", "JMART", "JMT", "KBANK", "KTB", "KTC",
+    "LH", "MINT", "MTC", "OR", "OSP", "PTT", "PTTEP", "PTTGC", "RATCH", "SAWAD",
+    "SCB", "SCC", "SCGP", "TIDLOR", "TISCO", "TOP", "TRUE", "TTB", "TU"
+]
+
 def clean_format(df):
     header_row = pd.DataFrame([df.columns.tolist()], columns=df.columns)
     df_formatted = pd.concat([header_row, df], ignore_index=True)
