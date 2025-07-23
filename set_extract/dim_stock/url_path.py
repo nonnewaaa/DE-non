@@ -2,5 +2,5 @@ import configparser
 config = configparser.ConfigParser()
 config.read('set_extract/url_path.conf')
 
-set_list_path = config.get("paths", "set_list_path")
-url = config.get("urls", "url")
+dim_cfg = config.get("paths", "dim_cfg")
+dim_url = config.get("urls", "dim_url")

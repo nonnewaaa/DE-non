@@ -1,9 +1,10 @@
 import pandas as pd
+import numpy as np
 from io import StringIO
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from postgress.conn_postgress import *
+from postgress.conn_postgress import insert_to_table
 
 from url_path import *
 
