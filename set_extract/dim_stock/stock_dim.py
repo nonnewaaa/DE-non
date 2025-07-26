@@ -7,7 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from io import StringIO
 
 import pandas as pd
-from postgress.conn_postgress import insert_to_table
+import numpy as np
+from postgress.fn_postgress import insert_to_table
 from url_path import *
 
 class Config:
@@ -19,6 +20,7 @@ class Config:
 
 def clean_df(df, col_target):
     df = df.drop(columns=["Factsheet (Click to clear sorting)"])
+    df = df.replace("-", None)
     df.columns = col_target
     return df
 

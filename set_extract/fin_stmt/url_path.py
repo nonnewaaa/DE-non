@@ -1,6 +1,6 @@
 import configparser
 config = configparser.ConfigParser()
-config.read('set_extract/url_path.conf')
+config.read('set_extract/set_extract.conf')
 
-set_list_path = config.get("paths", "set_list_path")
-url = config.get("urls", "url")
+set_list_path = config.get("paths", "fin_cfg")
+url = config.get("urls", "fin_url")
