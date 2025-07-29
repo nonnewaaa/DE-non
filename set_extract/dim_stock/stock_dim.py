@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from io import StringIO
 
 import pandas as pd
-import numpy as np
+import time
 from postgress.fn_postgress import insert_to_table
 from url_path import *
 
@@ -39,11 +39,12 @@ if __name__ == "__main__":
             current_df = tables[1] 
             df = pd.concat([df, current_df], ignore_index=True)
 
-            next_button = WebDriverWait(driver, 20).until(
+            next_button = WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, "//button[@aria-label='Go to next page']"))
             )
 
             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", next_button)
+            time.sleep(0.5)
             next_button.click()
 
         except Exception as e:
