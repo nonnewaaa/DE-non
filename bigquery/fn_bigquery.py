@@ -1,7 +1,7 @@
 from bigquery.bq_config import bq_conf
 from google.cloud import bigquery
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "bigquery\data-non-project-creadentials.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "bigquery/data-non-project-creadentials.json"
 
 def upload_to_bigquery(df, df_conf):
     config = bq_conf(df_conf)
