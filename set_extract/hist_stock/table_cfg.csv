@@ -1,0 +1,2 @@
+stock_list,columns,db_name,schema,table_name
+ADVANC|AOT|AWC,symbol|company_name|market|industry_group|sector,Primary,analytics,dim_stock_detail
