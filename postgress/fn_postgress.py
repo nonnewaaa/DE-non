@@ -4,7 +4,7 @@ import numpy as np
 from postgress.config.get_config import *
 from sqlalchemy import create_engine, text
 from utils.exception import DataFrameException
-from utils.fn_validate_data import *
+#from utils.validate_data import *
 
 def gen_connection_pg(db_name: str):
     conn_str = build_db_connection(db_name)
