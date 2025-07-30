@@ -9,6 +9,7 @@ from io import StringIO
 import pandas as pd
 import time
 from postgress.fn_postgress import insert_to_table
+from bigquery.fn_bigquery import *
 from url_path import *
 
 class Config:
@@ -44,7 +45,7 @@ if __name__ == "__main__":
             )
 
             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", next_button)
-            time.sleep(0.5)
+            time.sleep(1)
             next_button.click()
 
         except Exception as e:
@@ -53,4 +54,5 @@ if __name__ == "__main__":
 
     driver.quit()
     df = clean_df(df, config.df_columns)
-    insert_to_table(config.table_name, df, config.schema, config.db_name)
+    df_to_bigquery(df, "dim_stock_detail")
+    #insert_to_table(config.table_name, df, config.schema, config.db_name)
