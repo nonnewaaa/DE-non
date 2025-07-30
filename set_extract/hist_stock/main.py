@@ -16,14 +16,12 @@ class Config:
     def __init__(self, df_conf):
         self.stock_list = df_conf.loc[0, "stock_list"].split("|")
         self.df_columns = df_conf.loc[0, "columns"].split("|")
-        self.db_name = df_conf.loc[0, "db_name"]
-        self.schema = df_conf.loc[0, "schema"]
         self.table_name = df_conf.loc[0, "table_name"]
 
-def clean_df(df, col_target):
-    df = df.drop(columns=["Factsheet (Click to clear sorting)"])
-    df = df.replace("-", None)
-    df.columns = col_target
+def clean_df(df):
+    df.columns = config.df_columns
+    df['Value'] = df['Value'] * 1000
+    df['Date'] = pd.to_datetime(df['Date'], format='%d %b %Y').dt.strftime('%Y-%m-%d')
     return df
 
 if __name__ == "__main__":
@@ -58,10 +56,9 @@ if __name__ == "__main__":
                 break
 
         driver.quit()
-        df["stock_name"] = stock
+        df["Stock"] = stock
         main_df = pd.concat([main_df, df], ignore_index=True)
-        print("Columns:", main_df.columns.tolist())
-        print("First row:", main_df.iloc[0].to_dict())
-
-    #df = clean_df(df, config.df_columns)
+        print(main_df.columns)
+    df = clean_df(main_df)
+    print(df)
     #insert_to_table(config.table_name, df, config.schema, config.db_name)

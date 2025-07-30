@@ -1,2 +1,2 @@
-stock_list,columns,db_name,schema,table_name
-ADVANC|AOT|AWC,symbol|company_name|market|industry_group|sector,Primary,analytics,dim_stock_detail
+stock_list,columns,table_name
+ADVANC,Date|Open|High|Low|Close|Change|Percent_Change|Volume_Shares|Value|Stock,dim_stock_detail
